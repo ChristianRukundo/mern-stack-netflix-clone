@@ -6,6 +6,7 @@ const mongoose =require('mongoose')
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/Auth')
 const userRoutes = require('./routes/User')
+const movieRoutes = require("./routes/Movie")
 
 
 //Configuration  
@@ -32,6 +33,7 @@ app.get(`/${api}`, (req, res) => {
 
 app.use(`/${api}/auth`, authRoutes)
 app.use(`/${api}/users`, userRoutes)
+app.use(`/${api}/movies`, movieRoutes)
 
 
 app.all('*', (req, res) => {
