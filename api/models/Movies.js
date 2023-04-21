@@ -1,6 +1,5 @@
-import { Schema, model } from "mongoose";
-
-const MovieSchema = new Schema(
+const mongoose = require('mongoose')
+const MovieSchema = new mongoose.Schema(
   {
     title: { type: String, required: true, unique: true },
     desc: { type: String },
@@ -16,5 +15,4 @@ const MovieSchema = new Schema(
   },
   { timestamps: true }
 );
-
-export default model("Movie", MovieSchema);
+module.exports = mongoose.model("Movie", MovieSchema);
